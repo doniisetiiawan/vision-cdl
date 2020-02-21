@@ -1,13 +1,23 @@
 {
   "name": "vision-cdl",
   "version": "1.0.0",
-  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch 'test/**/*' --watch app.js",
+    "test": "grunt test"
+  },
+  "main": "app.js",
   "author": "Doni Setiawan <donisetiawan.050@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
-    "prettier": "^1.19.1"
+    "mocha": "^7.0.1",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
