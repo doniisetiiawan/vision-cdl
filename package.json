@@ -2,7 +2,7 @@
   "name": "vision-cdl",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon --watch 'test/**/*' --watch app.js",
+    "start": "nodemon --watch 'test/**/*' --watch 'lib/**/*' --watch app.js",
     "test": "grunt test"
   },
   "main": "app.js",
