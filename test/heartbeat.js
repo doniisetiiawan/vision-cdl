@@ -11,4 +11,13 @@ describe('vision heartbeat api', () => {
         .expect(200, done);
     });
   });
+
+  describe('when requesting resource /missing', () => {
+    it('should respond with 404', (done) => {
+      request(app)
+        .get('/missing')
+        .expect('Content-Type', /json/)
+        .expect(404, done);
+    });
+  });
 });
