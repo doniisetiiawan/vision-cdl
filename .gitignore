@@ -32,3 +32,4 @@ uploads/
 .nyc_output/
 public/
 files/
+test/login.js
