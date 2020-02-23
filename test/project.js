@@ -1,11 +1,16 @@
-/* eslint-disable no-undef */
+const mocha = require('mocha');
 const request = require('supertest');
 const assert = require('assert');
 const mongoose = require('mongoose');
+const _ = require('underscore');
 const app = require('../app');
 const login = require('./login');
 
+const { describe, it, beforeEach } = mocha;
+
 describe('vision project api', () => {
+  let id;
+
   beforeEach((done) => {
     mongoose.connection.collections.projects.drop(() => {
       const proj = {
@@ -18,7 +23,7 @@ describe('vision project api', () => {
       mongoose.connection.collections.projects.insertOne(
         proj,
         () => {
-          // id = docs[0]._id;
+          id = proj._id;
           console.log(proj._id);
           done();
         },
@@ -57,6 +62,27 @@ describe('vision project api', () => {
             res.header.location,
             `/project/${proj._id}`,
           );
+          done();
+        });
+    });
+  });
+
+  describe('when requesting an available resource /project/:id', () => {
+    it('should respond with 200', (done) => {
+      request(app)
+        .get(`/project/${id}`)
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end((err, res) => {
+          const proj = JSON.parse(res.text);
+          console.log(proj);
+          assert.equal(proj._id, id);
+          assert(_.has(proj, '_id'));
+          assert(_.has(proj, 'name'));
+          assert(_.has(proj, 'user'));
+          assert(_.has(proj, 'token'));
+          assert(_.has(proj, 'created'));
+          assert(_.has(proj, 'repositories'));
           done();
         });
     });
