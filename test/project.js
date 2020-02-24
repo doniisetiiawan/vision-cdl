@@ -87,4 +87,20 @@ describe('vision project api', () => {
         });
     });
   });
+
+  describe('when updating an existing resource /project/:id', () => {
+    const project = {
+      name: 'new test name',
+      user: login.user,
+      token: login.token,
+      repositories: ['12345', '9898'],
+    };
+
+    it('should respond with 204', (done) => {
+      request(app)
+        .put(`/project/${id}`)
+        .send(project)
+        .expect(204, done);
+    });
+  });
 });
