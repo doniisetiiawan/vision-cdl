@@ -67,6 +67,25 @@ describe('vision project api', () => {
     });
   });
 
+  describe('when requesting resource get all projects', () => {
+    it('should respond with 200', (done) => {
+      request(app)
+        .get(`/project/?user=${login.user}`)
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end((err, res) => {
+          const proj = _.first(JSON.parse(res.text));
+          assert(_.has(proj, '_id'));
+          assert(_.has(proj, 'name'));
+          assert(_.has(proj, 'user'));
+          assert(_.has(proj, 'token'));
+          assert(_.has(proj, 'created'));
+          assert(_.has(proj, 'repositories'));
+          done();
+        });
+    });
+  });
+
   describe('when requesting an available resource /project/:id', () => {
     it('should respond with 200', (done) => {
       request(app)
