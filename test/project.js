@@ -103,4 +103,12 @@ describe('vision project api', () => {
         .expect(204, done);
     });
   });
+
+  describe('when deleting an existing resource /project/:id', () => {
+    it('should respond with 204', (done) => {
+      request(app)
+        .del(`/project/${id}`)
+        .expect(204, done);
+    });
+  });
 });
