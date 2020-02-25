@@ -27,9 +27,10 @@
     "mongoose": "^5.9.2",
     "morgan": "^1.9.1",
     "nconf": "^0.10.0",
+    "redis": "^3.0.2",
+    "require-directory": "latest",
     "string": "^3.3.3",
     "underscore": "latest",
-    "winston": "^3.2.1",
-    "require-directory": "latest"
+    "winston": "^3.2.1"
   }
 }
