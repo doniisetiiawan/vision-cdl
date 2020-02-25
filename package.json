@@ -28,7 +28,7 @@
     "morgan": "^1.9.1",
     "nconf": "^0.10.0",
     "string": "^3.3.3",
-    "winston": "^3.2.1",
-    "underscore": "latest"
+    "underscore": "latest",
+    "winston": "^3.2.1"
   }
 }
