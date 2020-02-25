@@ -29,6 +29,7 @@
     "nconf": "^0.10.0",
     "string": "^3.3.3",
     "underscore": "latest",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "require-directory": "latest"
   }
 }
