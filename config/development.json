@@ -2,15 +2,22 @@
   "express": {
     "port": 3000
   },
-  "logger" : {
+  "logger": {
     "filename": "logs/run.log",
     "level": "silly"
   },
   "mongo": {
-    "url":  "mongodb://localhost/vision-wpwen"
+    "url": "mongodb://localhost/vision-wpwen"
   },
   "redis": {
-    "port": 6379
-  , "host": "localhost"
+    "port": 6379,
+    "host": "localhost"
+  },
+  "sockets": {
+    "loglevel": 3,
+    "pollingduration": 10,
+    "browserclientminification": false,
+    "browserclientetag": false,
+    "browserclientgzip": false
   }
 }
