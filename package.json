@@ -31,7 +31,6 @@
     "require-directory": "latest",
     "string": "^3.3.3",
     "underscore": "latest",
-    "winston": "^3.2.1",
-    "async": "latest"
+    "winston": "^3.2.1"
   }
 }
