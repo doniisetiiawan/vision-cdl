@@ -1,10 +1,10 @@
-const mocha = require('mocha');
-const request = require('supertest');
-const assert = require('assert');
-const mongoose = require('mongoose');
-const _ = require('underscore');
-const app = require('../app');
-const login = require('./login');
+import mocha from 'mocha';
+import request from 'supertest';
+import assert from 'assert';
+import mongoose from 'mongoose';
+import _ from 'underscore';
+import app from '../app';
+import login from './login';
 
 const { describe, it, beforeEach } = mocha;
 

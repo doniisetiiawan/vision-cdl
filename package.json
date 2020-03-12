@@ -2,13 +2,16 @@
   "name": "vision-cdl",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon --watch 'test/**/*' --watch 'lib/**/*' --watch app.js",
+    "start": "nodemon --watch . --watch app.js",
     "test": "grunt test"
   },
   "main": "app.js",
   "author": "Doni Setiawan <donisetiawan.050@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
@@ -22,6 +25,7 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "@babel/register": "latest",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "express": "^4.17.1",

@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
-const request = require('supertest');
-const app = require('../app');
+import request from 'supertest';
+
+import app from '../app';
 
 describe('vision heartbeat api', () => {
   describe('when requesting resource /heartbeat', () => {
